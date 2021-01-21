@@ -1,0 +1,81 @@
+Pendulum-v0의 hyperparameter를 그대로 가져와서 학습시켰더니
+학습이 되지 않음.
+
+
+ 
+Pong-v4:
+  n_envs: 8
+  n_timesteps: !!float 2e6
+  policy: 'MlpPolicy'
+  n_steps: 2048
+  nminibatches: 16
+  lam: 0.98
+  gamma: 0.999
+  noptepochs: 10
+  ent_coef: 0.0
+  learning_rate: 2.5e-4
+  cliprange: 0.2
+
+test2임. 실패.
+
+
+test3
+-> nminibatches를 32로 늘리고 lam을 0.8로 줄임
+-> 더 안좋아짐.
+
+test4
+n_steps을 절반으로 내리고 lam을 0.999로 높이자.
+minibatches도 16으로 내림.
+-> 실패
+
+test5
+learning_rate를 높여보자.
+2.5e-2 ㄱㄱ
+-> 최악. 차라리 낮춰보자.
+
+test6
+learning_rate 2.5e-7
+얘도 될 기미가 없다.
+
+test7
+learining_rate 다시 2.5e-4
+lam 0.95
+gamma 0.8
+
+test8
+n_envs 16
+nminibatches 32
+lam 0.98
+gamma 0.999
+대부분 LunarLander-v2와 동일하게 설정.
+아까보단 낫지만 여전히 안됨.
+
+test9
+lam 0.999
+개선 없음.
+
+test10
+lam 0.8
+gamma 0.99
+올라갈 기미가 없다.
+우선 LunarLander-v2 끝내고 보자.
+
+test11
+learning_rate = 1.0e-4
+batch_size = 10
+ent_coef = 0.5
+n_steps = 200
+nminibatches = 10
+그나마 나빠지진 않았으나 좋아지진 않았다.
+
+test12
+여기에서 lam 0.95로 올려보자.
+
+test13
+n_envs 32
+n_steps 400
+nminibatches 20
+n = 10000000
+
+꼬박 하루 넘게 걸렸는데 거의 이정도면 진자운동임.
+pybullet하러 갑세...

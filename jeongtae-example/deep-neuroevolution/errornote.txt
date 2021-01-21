@@ -1,0 +1,13 @@
+TypeError: only length-1 arrays can be converted to Python scalars
+-> 함수가 단일 값을 기대하지만 대신 배열을 전달하면 이 오류가 발생한다.
+-> numpy가 아닌 math 기본 라이브러리의 함수는 numpy arrays와 잘 맞지 않는다. 따라서 math함수는 numpy의 math함수로 바꾸어야 한다.
+
+ValueError: operands could not be broadcast together with shapes (2,) (5,)
+-> 괄호 안의 숫자들은 매번 변경된다. 하지만 CartPole-v1을 v0으로 내려도
+이와 동일한 에러만 반복적으로 발생한다. 그것도
+tlogger.record_tabular("EpLenMean", lengths_n2.mean())
+에서만.
+이는 매번 length가 다르게 나오고 있는 CartPole의 결과값에 의심이 간다.
+그럼 length를 출력 안하면 되잖아?
+-> 일단 해당 에러를 발생시키는 부분들을 주석처리하는 것으로 임시처방함.
+-> 길이를 일정하게 만드는 것은 힘들지 않을까 생각.

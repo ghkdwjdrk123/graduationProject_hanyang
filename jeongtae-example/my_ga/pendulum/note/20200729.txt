@@ -1,0 +1,18 @@
+일단 실행해도 제대로 학습되지 않는다.
+그냥 hyper parameter를 변경하는 정도로는 힘들다.
+random의 범위를 줄여야할 듯 하다.
+
+저번에 했던 멘토링에서 현재값을 평균으로 주는 정규분포값을 넣는 방법을 제안하셨는데 한번 해봐야겠다.
+-> 해보았는데 그냥 단순히 mu 값(gen_mean)을 더하는 것으로는 해결은 되지 않는다. 다만 변화하는 폭이 넓어진 것은 눈에 보인다. 아마 sigma쪽을 조금 더 건들여봐야하나?
+https://docs.scipy.org/doc/numpy-1.16.0/reference/generated/numpy.random.randn.html
+그러면 W_ = W + sigma * N[j]에서 W를 빼고 해보자. 어차피 gen_mean을 더해주니까 가능하지 않을까?
+-> 뭔가 어긋났나? 별다른 변화는 없다.
+-> 잘못 생각하고 있었던듯하다. gen_mean은 해당 generation의 reward의 평균인 것  같다.
+
+move를 [move]로 줬던 것을 action[move]로 변경해주었다. 결과는 나빠졌지만 변화는 크게 나왔다.
+
+https://codetorial.net/numpy/random.html
+numpy 난수 생성
+
+전체 steps_limit을 정해놓고 그 안에서 GA를 돌리는 형태로 original GA를 구현하는 중이다.
+현재 TypeError: only integer scalar arrays can be converted to a scalar index 에러를 잡는 중.

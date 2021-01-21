@@ -1,0 +1,4 @@
+bipedalWalker는 pendulum보다 훨씬 복잡하다.
+다만 gym차원에서 지원하는 function 중에 특정 action에 대해 1 step 뒤의 reward를 알려주는 function만 있다면 훨씬 수월해질 것 같은데...
+
+이게 있는지 한번 알아보자. 

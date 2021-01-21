@@ -1,0 +1,22 @@
+{
+  "config": {
+    "calc_obstat_prob": 0.0,
+    "episodes_per_batch": 100,
+    "eval_prob": 0.05,
+    "l2coeff": 0.005,
+    "noise_stdev": 0.005,
+    "snapshot_freq": 20,
+    "timesteps_per_batch": 100,
+    "return_proc_mode": "centered_rank",
+    "episode_cutoff_mode": 500
+  },
+  "population_size": 100,
+  "num_elites": 3,
+  "env_id": "Pendulum-v0",
+  "policy": {
+    "args" : {
+      "nonlin_type": "relu"
+    },
+    "type": "GAPolicy_Pen"
+  }
+}

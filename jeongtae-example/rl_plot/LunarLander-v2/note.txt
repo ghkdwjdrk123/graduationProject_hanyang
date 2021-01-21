@@ -1,0 +1,36 @@
+n-jobs 변경은 전혀 효과가 없는 듯.
+
+최소 200이 되야 합격.
+
+test01
+lam 0.98 -> 0.999
+
+test2
+gamma 0.999 -> 0.9
+훨씬 안좋은 결과
+
+test3
+gamma 되돌리고 ect_coef 0.01 -> 0.001
+131까진 올라옴.
+
+test4
+그대로 둔채 gamma 0.999 -> 0.9999
+더 나빠진듯
+
+test5
+ent_coef 0.001 -> 0.0001
+
+test6
+n_steps, nminibatches, noptepochs, n_envs 전부 2배!
+별 효과는 없네.
+
+test7
+ent_coef를 다시 0.001로 돌려보자.
+lam 0.95
+불안정해졌네?
+
+test8
+lam 0.90
+여까지 오니 n 5000000에 드디어 200에 근접했다. 끝!
+
+

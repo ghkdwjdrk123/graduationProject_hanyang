@@ -1,0 +1,5 @@
+To do in laptop:
+1. sudo apt-get install ffmpeg
+	(Maybe you should do
+	2. pip3 install ffmpeg)
+

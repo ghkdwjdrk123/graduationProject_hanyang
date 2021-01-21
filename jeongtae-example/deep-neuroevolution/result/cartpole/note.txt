@@ -1,0 +1,3 @@
+cartpole은 너무 간단했는지 hyperparameter에서 episodes_per_batch, timesteps_per_batch, episode_cutoff_mode를 각각 1000, 1000, 5000으로 준 것만으로 금방 해답에 도달해버렸다.
+
+어쩌면 지금 사용하고 있는 make_net자체는 ga가 맞는데 hyperparameter가 잘못되었던 것은 아닐까?

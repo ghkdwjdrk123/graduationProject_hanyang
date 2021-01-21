@@ -1,0 +1,18 @@
+graph를 만드는 것을 plotting 한다고 함. !!
+
+맨 앞에
+from stable_baselines import results_plotter
+import matplotlib.pyplot as plt
+
+적어주고 맨 밑에
+
+results_plotter.plot_results([save_path], n_timesteps, results_plotter.X_TIMESTEPS, args.env + "_" + args.algo)
+plt.show()
+
+적어줌.
+
+전자 2줄은 import 부분, 후자 2줄은 plot 출력 부분이다. save_path는 csv 파일이 저장되는 경로이고, n_timesteps은 말 그대로 timesteps, reselts_plotter.X_TIMESTEPS는 x축을 timesteps으로 쓴다는 말 같다.
+그 뒤의 args.env + "_" + args.algo는 파일 이름.
+plt.show()는 plot실행문이다.
+
+그리고 중요한 것. 꼭 일정량 이상의 결과가 나올 수 있도록 n 값을 충분히 줄 것!
